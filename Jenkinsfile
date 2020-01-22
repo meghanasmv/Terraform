@@ -7,7 +7,7 @@ pipeline {
   stage('test') {
    steps {
     sh "terraform init"
-    sh "terraform destroy -input=false -auto-approve"
+    sh "terraform apply -input=false -auto-approve"
     }
    } 
  }
