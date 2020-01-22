@@ -7,7 +7,7 @@ pipeline {
   stage('test') {
    steps {
     sh "terraform init"
-    sh "terraform apply"
+    sh "terraform apply -input=false myplan"
    } 
   }
  }
