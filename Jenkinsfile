@@ -2,6 +2,7 @@ pipeline {
  agent any
  environment{
   env.PATH = “${tfHome}:${env.PATH}”
+ }
  stages {
   stage('terraform init'){
     steps{
