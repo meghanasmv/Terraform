@@ -1,10 +1,13 @@
 pipeline {
  agent any
- environment{
-  env.PATH = “${tfHome}:${env.PATH}”
+ stages
+ stage(‘Set Terraform path’) {
+  steps {
+   script {
+    def tfHome = tool name: ‘Terraform’
+     env.PATH = “${tfHome}:${env.PATH}”
  }
- stages {
-  stage('terraform init'){
+ stage('terraform init'){
     steps{
       sh "terraform init"
      }
