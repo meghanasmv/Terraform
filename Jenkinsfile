@@ -4,7 +4,7 @@ pipeline {
   PATH = "${PATH}:${getTerraformPath()}"
  } 
  stages {
-  stage(‘terraform init’) {
+  stage('test') {
    steps {
     sh "terraform init"
    } 
